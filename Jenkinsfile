@@ -1,3 +1,5 @@
+String gitCredentials = "jenkins-local"
+
 pipeline {
     agent any
 
@@ -5,7 +7,7 @@ pipeline {
         stage('Checkout') {
              steps {
                 echo "Cloning the code"
-                git url: "https://github.com/konraduciechowski/jenkins-test", branch: "main"
+                git url: "https://github.com/konraduciechowski/jenkins-test", branch: "main", credentialsId: gitCredentials
             }
         }
 
