@@ -14,8 +14,8 @@ pipeline {
         stage('Run python') {
             steps {
                 echo 'installing requirements'
-                //sh 'pip install requirements.txt'
-                sh 'python3 main.py'
+                sh 'pip install requirements.txt'
+                sh 'python3 pandas-revise.py'
             }
         }
     }
