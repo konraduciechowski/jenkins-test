@@ -3,11 +3,9 @@ pipeline {
 
     stages {
         stage('Checkout') {
-            steps {
-                checkout main
-
-                sh 'git log HEAD^..HEAD --pretty="%h %an - %s" > GIT_CHANGES'
-                def lastChanges = readFile('GIT_CHANGES')
+             steps {
+                echo "Cloning the code"
+                git url: "https://github.com/konraduciechowski/jenkins-test", branch: "main"
             }
         }
 
