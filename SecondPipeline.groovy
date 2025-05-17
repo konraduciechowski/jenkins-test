@@ -14,13 +14,12 @@ pipeline {
         stage('Run python') {
             steps {
                 echo 'installing requirements'
-		sh 'python3 -m venv .venv'
-		sh 'ls -la .venv/bin/'
-		sh '. .venv/bin/activate && pip install -r requirements.txt'
-		//sh '.venv/bin/activate'
-		//sh './.venv/bin/activate'
-                //sh 'pip install -r requirements.txt'
-                sh 'python3 pandas-revise.py'
+		sh '''
+			python3 -m venv .venv
+			ls -la .venv/bin/
+			. .venv/bin/activate && pip install -r requirements.txt
+			python3 pandas-revise.py
+		   '''	
             }
         }
     }
