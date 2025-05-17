@@ -14,6 +14,8 @@ pipeline {
         stage('Run python') {
             steps {
                 echo 'installing requirements'
+		sh 'python3 -m venv .venv'
+		sh 'source .venv/bin/activate'
                 sh 'pip install requirements.txt'
                 sh 'python3 pandas-revise.py'
             }
