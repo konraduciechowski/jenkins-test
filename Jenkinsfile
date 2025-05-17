@@ -7,7 +7,7 @@ pipeline {
         stage('Checkout') {
              steps {
                 echo "Cloning the code"
-                git url: "https://github.com/konraduciechowski/jenkins-test", branch: "main", credentialsId: gitCredentials
+                git url: "https://github.com/infoshareacademy/jpydzr7-pandas-revise", branch: "main", credentialsId: gitCredentials
             }
         }
 
